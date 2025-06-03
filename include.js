@@ -40,7 +40,7 @@ const pages = [
 ];
 */
 
-/* 2. switch-case라서 확장성 떨어짐. 여기도 리팩터
+/* 2. switch-case라서 확장성 떨어짐. 인덱스 자동화 여기도 리팩터
 let index = 0;
 switch (current) {
     case "sec_home.html": index = 0; break;
@@ -56,8 +56,6 @@ if (circleList[index]) {
     circleList[index].classList.add("active");
 }
 */
-
-
 
 //동그라미 클릭 시 해당 페이지 이동
 circleList.forEach((circle, idx) => {
