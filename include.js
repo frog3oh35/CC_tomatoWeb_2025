@@ -1,16 +1,36 @@
-let current = "";
 
-window.addEventListener("DOMContentLoaded", () => {
-    current = location.pathname.split("/").pop();
-})
-
-if (!current || current === "") {
-    current = "sec_home.html";
-    loadSection("sections/sec_home.html");
-}
+//1. refactoring
+const pageNames = ["home", "effect", "canvas", "recipe", "mbti"];
+const pagePathPrefix = "sections/sec_";
+const pages = pageNames.map(name => `${pagePathPrefix}${name}.html`);
+//
 
 const circleList = document.querySelectorAll(".circle");
 
+window.addEventListener("DOMContentLoaded", () => {
+    //현재 파일명 추출
+    let current = location.pathname.split("/").pop();
+
+    if (!current || current === "") current = "sec_home.html";
+
+    //2. refactoring, 현재 페이지 키워드만 추출
+    const pageKey = current.replace("sec_", "").replace(".html", "");
+
+    // 자동 인덱스 계산, 못 찾으면 기본값 0
+    const index = pageNames.indexOf(pageKey) !== -1 ? pageNames.indexOf(pageKey) : 0;
+
+
+    // 동그라미 활성화 함수 실행
+    circleList.forEach(c => c.classList.remove("active"));
+    if (circleList[index]) {
+        circleList[index].classList.add("active");
+    }
+    //로드
+    loadSection(pages[index]);
+
+});
+
+/* 1. 하드코딩 빠이.
 const pages = [
     "sections/sec_home.html",
     "sections/sec_effect.html",
@@ -18,7 +38,9 @@ const pages = [
     "sections/sec_recipe.html",
     "sections/sec_mbti.html"
 ];
+*/
 
+/* 2. switch-case라서 확장성 떨어짐. 여기도 리팩터
 let index = 0;
 switch (current) {
     case "sec_home.html": index = 0; break;
@@ -33,6 +55,7 @@ if (circleList[index]) {
     circleList.forEach(c => c.classList.remove("active"));
     circleList[index].classList.add("active");
 }
+*/
 
 
 
