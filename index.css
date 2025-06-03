@@ -1,0 +1,346 @@
+@charset "EUC-KR";
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+div {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+
+/*header ~ */
+
+#top {
+    width: 100%;
+    background-color: tomato;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#top h1 {
+    display: inline-block;
+    background-color: white;
+    color: tomato;
+    padding: 0.3rem;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+    margin: auto;
+    float: left;
+    background-color: tomato;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#container {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.white_box {
+    min-height: 600px;
+    max-height: 600px;
+    min-width: 800px;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /*align-items: flex-start;*/
+    padding: 2rem 0;
+}
+
+.post_box {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: #2e2e2e;
+    padding: 2rem;
+}
+
+/*page별 css 적용*/
+.post_box .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+    text-align: center;
+    height: 100%;
+}
+
+.white_inner {
+    padding: 0;
+    /* ❗ white_inner는 선택적으로 사용 */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.effect_post {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #2e2e2e;
+    display: block;
+    text-align: left;
+    /* ✅ 글 왼쪽 정렬 */
+}
+
+/*canvas area*/
+
+canvas {
+    border: 3px dashed tomato;
+    background-color: white;
+    border-radius: 10px;
+    cursor: crosshair;
+}
+
+.toolbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.toolbox input[type="color"] {
+    margin-left: 0.5rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbox button {
+    background-color: #ff9f8e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.toolbox button:hover {
+    background-color: #ff8066;
+}
+
+.side-nav {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/*recipe area*/
+
+.recipe_box {
+    background-color: white;
+    text-align: center;
+}
+
+.recipe_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.recipe_card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0.4, 0.4, 0.4, 0.1);
+    width: 280px;
+    height: 460px;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.recipe_card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px rgba(0.5, 0.5, 0.5, 0.3);
+}
+
+.recipe_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.recipe_mini {
+    padding: 10px;
+    font-size: 11px;
+    font-style: bold;
+    text-align: center;
+    color: #4c4c4c;
+}
+
+.recipe_card h3 {
+    color: #d34b32;
+}
+
+
+.like {
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.like.active {
+    transform: scale(1.4);
+    color: red;
+}
+
+/*mbti*/
+.sec_mbti {
+    background-color: white;
+}
+
+.mbti_card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+.sec_mbti h2 {
+    margin-bottom: 6rem;
+}
+
+
+.sec_mbti button.answer {
+    margin: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: tomato;
+    color: #fff;
+    font-style: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.sec_mbti button.answer:hover {
+    transform: scale(1.05);
+}
+
+.sec_mbti .q2 {
+    transform: scal(1.05);
+}
+
+.sec_mbti .result {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.sec_mbti .result.active {
+    display: block;
+}
+
+.sec_mbti .result img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate: (10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*이하 footer*/
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav li.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+
+    background-color: #fff;
+    border: 1px dashed #ffc0b0;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.side-nav li.circle.active {
+    background-color: #ffc0b0;
+}
+
+.side-nav li.circle:hover {
+    background-color: #ffc0b0;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: tomato;
+    color: white;
+    margin-top: auto;
+}
+
+.footer_box {
+    width: 100%;
+    background-color: tomato;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: white;
+}
